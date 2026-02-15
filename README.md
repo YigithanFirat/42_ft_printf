@@ -1,2 +1,1 @@
-# ft_printf
-42 ft_printf project
+*This project has been created as part of the 42 cirriculum by yfirat.*
