@@ -4,6 +4,10 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
+SRCS = ft_print.c \
+	   ft_printf_char.c \
+	   ft_putchar.c \
+
 OBJS = $(SRCS:.c=.o)
 
 all = $(NAME)
