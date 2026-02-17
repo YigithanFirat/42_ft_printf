@@ -20,6 +20,8 @@ int	format_type(va_list args, char c)
 	count = 0;
 	if (c == 'c')
 		count += ft_putchar(va_arg(args, int));
+	else if (c == 's')
+		count += ft_putstr(va_arg(args, char *));
 	return (count);
 }
 
