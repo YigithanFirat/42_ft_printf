@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yfirat <yfirat@student.42kocaeli.com.tr>   +#+  +:+       +#+        */
+/*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 01:04:01 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/15 19:11:47 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/02/18 10:37:29 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	format_type(va_list args, char c)
 		count += ft_putchar(va_arg(args, int));
 	else if (c == 's')
 		count += ft_putstr(va_arg(args, char *));
+	else if (c == 'p')
+		count += ft_putptr(va_arg(args, void *));
 	return (count);
 }
 
