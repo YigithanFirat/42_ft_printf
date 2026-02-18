@@ -23,7 +23,7 @@ int	format_type(va_list args, char c)
 	else if (c == 's')
 		count += ft_putstr(va_arg(args, char *));
 	else if (c == 'p')
-		count += ft_putptr(va_arg(args, void *));
+		count += ft_putptr(va_arg(args, unsigned long));
 	return (count);
 }
 
