@@ -6,13 +6,13 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:28:50 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/20 09:21:42 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/02/20 12:13:22 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex_uppercase(long a)
+int	ft_puthex_uppercase(unsigned long a)
 {
 	int		len;
 	char	*base;
