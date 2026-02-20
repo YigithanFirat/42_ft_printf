@@ -37,3 +37,9 @@ Bu komutla birlikte projenin kaynak kodları derlenecek ve `libftprintf.a` dosya
         return (0);
     }
 ```
+
+Bu projede recursive fonksiyon kullanımları tercih edilmiştir ( Öz Yinelemeli ). Sayı taban dönüşümleri yapılmıştır ( Hexadecimal, decimal). Sayının her basamağı mod alma ve bölme işlemleriyle yazdırılmıştır. Bu proje yazılırken özel bir struct yapısı kullanılmıştır. Doğrudan stack üzerinde tutulan yerel değişkenler ve variadic list ( va_list ) kullanılmıştır. Bu bizim için bellek kullanımını minimumda tutmamızı sağlamış ve optimize olmasını sağlamıştır.
+
+## KAYNAKLAR
+
+* [Variadic Functions in C](https://www.geeksforgeeks.org/c/variadic-functions-in-c/)
