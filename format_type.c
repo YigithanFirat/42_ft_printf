@@ -6,7 +6,7 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:37:26 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/20 09:22:01 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/02/20 10:06:32 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ int	format_type(va_list args, char c)
 		count += ft_puthex_uppercase(va_arg(args, long));
 	else if (c == '%')
 		count += ft_putchar('%');
+	else
+		count += ft_putchar(c);
 	return (count);
 }
