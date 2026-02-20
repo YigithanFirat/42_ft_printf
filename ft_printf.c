@@ -6,7 +6,7 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 01:04:01 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/20 10:47:56 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/02/20 12:00:17 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (*format)
 	{
-		if (*format == '%')
+		if (*format == '%' && *(format + 1))
 		{
 			format++;
 			length += format_type(args, *format);
 		}
+		else if (*format == '%' && !*(format + 1))
+			return (-1);
 		else
 			length += ft_putchar(*format);
 		format++;
