@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yfirat <yfirat@student.42kocaeli.com.tr>   +#+  +:+       +#+        */
+/*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 18:46:54 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/15 19:04:10 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/02/20 10:04:57 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ int	ft_putstr(char *s)
 
 	if (!s)
 	{
-		write(1, "(null)", 6);
+		if (write(1, "(null)", 6) == -1)
+			return (-1);
 		return (6);
 	}
 	i = 0;
 	while (s[i] != '\0')
 	{
-		write(1, &s[i], 1);
+		if (write(1, &s[i], 1) == -1)
+			return (-1);
 		i++;
 	}
 	return (i);
