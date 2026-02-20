@@ -6,7 +6,7 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:37:26 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/20 14:55:36 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/02/20 15:35:19 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	format_type(va_list args, char c)
 	else if (c == 's')
 		count += ft_putstr(va_arg(args, char *));
 	else if (c == 'p')
-		count += ft_putptr(va_arg(args, unsigned long long ));
+		count += ft_putptr(va_arg(args, unsigned long long));
 	else if (c == 'd' || c == 'i')
 		count += ft_putnbr(va_arg(args, int));
 	else if (c == 'u')
