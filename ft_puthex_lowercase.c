@@ -6,23 +6,29 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 19:36:36 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/20 12:23:47 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/02/20 14:21:34 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex_lowercase(unsigned long a)
+int	ft_puthex_lowercase(unsigned int a)
 {
-	unsigned long	len;
-	static char		*base;
+	int		len;
+	char	*base;
+	int		tmp;
 
 	len = 0;
 	base = "0123456789abcdef";
-	if (a == 0)
-		return (ft_putptr(a));
 	if (a >= 16)
-		len += ft_puthex_lowercase(a / 16);
-	len += ft_putchar(base[a % 16]);
-	return (len);
+	{
+		tmp = ft_puthex_lowercase(a / 16);
+		if (tmp == -1)
+			return (-1);
+		len += tmp;
+	}
+	tmp = ft_putchar(base[a % 16]);
+	if (tmp == -1)
+		return (-1);
+	return (len + tmp);
 }
