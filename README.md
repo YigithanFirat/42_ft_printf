@@ -28,4 +28,12 @@ Bu komutla birlikte projenin kaynak kodları derlenecek ve `libftprintf.a` dosya
 
 ### ÇALIŞTIRMA
 
+```C
+    #include "ft_printf.h"
 
+    int main(void)
+    {
+        ft_printf("Hello 42");
+        return (0);
+    }
+```
