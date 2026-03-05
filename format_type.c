@@ -6,7 +6,7 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:37:26 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/20 15:35:19 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/03/05 13:34:05 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ int	format_type(va_list args, char c)
 		count += ft_putnbr(va_arg(args, int));
 	else if (c == 'u')
 		count += ft_putunsigned(va_arg(args, unsigned int));
-	else if (c == 'x')
-		count += ft_puthex_lowercase(va_arg(args, unsigned int));
-	else if (c == 'X')
-		count += ft_puthex_uppercase(va_arg(args, unsigned int));
+	else if (c == 'x' || c == 'X')
+		count += ft_puthex(va_arg(args, unsigned int), c);
 	else if (c == '%')
 		count += ft_putchar('%');
 	else
