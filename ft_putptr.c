@@ -6,7 +6,7 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:23:04 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/20 15:36:24 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/03/05 13:38:23 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,7 @@ static int	ft_putptr_recursive(unsigned long long a)
 	len = 0;
 	base = "0123456789abcdef";
 	if (a >= 16)
-	{
-		tmp = ft_putptr_recursive(a / 16);
-		if (tmp == -1)
-			return (-1);
-		len += tmp;
-	}
+		len += ft_putptr_recursive(a / 16);
 	tmp = ft_putchar(base[a % 16]);
 	if (tmp == -1)
 		return (-1);
