@@ -6,7 +6,7 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:21:43 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/18 16:24:45 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/03/05 13:16:19 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_putunsigned(unsigned int n)
 {
 	int	i;
+	int	tmp;
 
 	i = 0;
 	if (n > 9)
@@ -23,6 +24,11 @@ int	ft_putunsigned(unsigned int n)
 		i += ft_putunsigned(n % 10);
 	}
 	else
-		i += ft_putchar(n + '0');
+	{
+		tmp = ft_putchar(n + '0');
+		if (tmp == -1)
+			return (-1);
+		i += tmp;
+	}
 	return (i);
 }
