@@ -6,7 +6,7 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:28:50 by yfirat            #+#    #+#             */
-/*   Updated: 2026/02/20 15:24:17 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/03/05 13:22:26 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,7 @@ int	ft_puthex_uppercase(unsigned int a)
 	len = 0;
 	base = "0123456789ABCDEF";
 	if (a >= 16)
-	{
-		tmp = ft_puthex_uppercase(a / 16);
-		if (tmp == -1)
-			return (-1);
-		len += tmp;
-	}
+		len += ft_puthex_uppercase(a / 16);
 	tmp = ft_putchar(base[a % 16]);
 	if (tmp == -1)
 		return (-1);
