@@ -6,7 +6,7 @@
 /*   By: yfirat <yfirat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:37:26 by yfirat            #+#    #+#             */
-/*   Updated: 2026/03/05 21:00:44 by yfirat           ###   ########.fr       */
+/*   Updated: 2026/03/06 14:25:03 by yfirat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,16 @@ static int	format_type_numbers(va_list args, char c)
 	return (0);
 }
 
+static int	fix_percent(va_list args, char c)
+{
+	if (c == '%')
+	{
+		if (ft_putchar('%') == -1)
+			return (-1);
+		return (1);
+	}
+}
+
 int	format_type(va_list args, char c)
 {
 	int	res;
@@ -37,7 +47,7 @@ int	format_type(va_list args, char c)
 	else if (c == 'd' || c == 'i' || c == 'u' || c == 'x' || c == 'X')
 		res = format_type_numbers(args, c);
 	else if (c == '%')
-		res = ft_putchar('%');
+		res = fix_percent(args, c);
 	else
 	{
 		if (ft_putchar('%') == -1)
