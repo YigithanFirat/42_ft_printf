@@ -20,9 +20,26 @@ Proje %cspdiuxX% desteklemektedir ve standart C kütüphanesi kurallarına uygun
 
 Projenin beraberinde gelen `Makefile` dosyasında ki komutlar ile derlenebilmektedir. Terminale aşağıdaki komutu yazmak yeterli olacaktır.
 
-```bash
-    make
-```
+
+* **Kütüphaneyi Oluşturmak İçin:**
+
+ ```bash
+  make
+ ```
+* **Oluşturulan Obje Dosyalarını Silmek İçin:**
+
+ ```bash
+  make clean
+ ```
+* **Her Şeyi Silmek İçin: (Arşiv ve Obje Dosyaları):**
+ ```bash
+  make fclean
+ ```
+
+* **Kütüphaneyi Temizleyip Yeniden Derlemek İçin:**
+ ```bash
+  make re
+ ```
 
 Bu komutla birlikte projenin kaynak kodları derlenecek ve `libftprintf.a` dosyasının oluşmasını sağlar.
 

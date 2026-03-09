@@ -24,12 +24,7 @@ int	ft_puthex(unsigned int n, char format)
 	else
 		base = "0123456789ABCDEF";
 	if (n >= 16)
-	{
-		tmp = ft_puthex(n / 16, format);
-		if (tmp == -1)
-			return (-1);
-		len += tmp;
-	}
+		len += ft_puthex(n / 16, format);
 	tmp = ft_putchar(base[n % 16]);
 	if (tmp == -1)
 		return (-1);
