@@ -12,10 +12,27 @@
 
 #include "ft_printf.h"
 
+static int	handle_printf(va_list args, const char **format)
+{
+	int	tmp;
+
+	if (**format == '%' && *(*format + 1))
+	{
+		(*format)++;
+		tmp = format_type(args, **format);
+	}
+	else if (**format == '%' && !*(*format + 1))
+		tmp = -1;
+	else
+		tmp = ft_putchar(**format);
+	return (tmp);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		length;
+	int		temp_length;
 
 	if (!format)
 		return (-1);
@@ -23,15 +40,10 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (*format)
 	{
-		if (*format == '%' && *(format + 1))
-		{
-			format++;
-			length += format_type(args, *format);
-		}
-		else if (*format == '%' && !*(format + 1))
+		temp_length = handle_printf(args, &format);
+		if (temp_length == -1)
 			return (-1);
-		else
-			length += ft_putchar(*format);
+		length += temp_length;
 		format++;
 	}
 	va_end(args);
