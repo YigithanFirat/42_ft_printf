@@ -15,11 +15,10 @@ SRCS = format_type.c \
 
 OBJS = $(SRCS:.c=.o)
 
-all = $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-	ranlib $(NAME)
 
 %.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
