@@ -42,7 +42,10 @@ int	ft_printf(const char *format, ...)
 	{
 		temp_length = handle_printf(args, &format);
 		if (temp_length == -1)
+		{
+			va_end(args);
 			return (-1);
+		}
 		length += temp_length;
 		format++;
 	}
